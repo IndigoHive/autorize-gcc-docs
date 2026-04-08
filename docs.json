@@ -49,6 +49,7 @@
       },
       {
         "tab": "API reference",
+        "openapi": "https://staging-usuario-api.autorize.com.br/swagger/v1/swagger.json",
         "groups": [
           {
             "group": "API documentation",
@@ -57,12 +58,9 @@
             ]
           },
           {
-            "group": "Endpoint examples",
+            "group": "Endpoints",
             "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
+              "api-reference/endpoint/criar-consentimento"
             ]
           }
         ]
