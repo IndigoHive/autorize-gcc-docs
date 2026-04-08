@@ -1,33 +1,24 @@
 ---
 title: 'API Key'
-description: 'Example section for showcasing API endpoints'
+description: 'Informações sobre como criar e utilizar a API Key no Autorize'
 ---
 
 <Note>
-  If you're not looking to build API reference documentation, you can delete
-  this section by removing the api-reference folder.
+A API Key deve ser criada na plataforma de Usuário (Empresa) no Autorize. É possível indicar um nome para identificar a chave, facilitando sua gestão.
 </Note>
 
-## Welcome
 
-There are two ways to build API documentation: [OpenAPI](https://mintlify.com/docs/api-playground/openapi/setup) and [MDX components](https://mintlify.com/docs/api-playground/mdx/configuration). For the starter kit, we are using the following OpenAPI specification.
+### Utilização
 
-<Card
-  title="Plant Store Endpoints"
-  icon="leaf"
-  href="https://github.com/mintlify/starter/blob/main/api-reference/openapi.json"
->
-  View the OpenAPI specification file
-</Card>
+A **API Key** é necessária para autenticar todas as requisições enviadas para a API. Ela deve ser incluída no cabeçalho `Api-Key` de cada requisição.
 
-## Authentication
-
-All API endpoints are authenticated using Bearer tokens and picked up from the specification file.
-
-```json
-"security": [
-  {
-    "bearerAuth": []
-  }
-]
+```http
+GET /api/endpoint HTTP/1.1
+Host: api.autorize.com.br
+Api-Key: sua-chave-aqui
 ```
+
+### Importante
+
+- Requisições com **API Keys inválidas** não serão concluídas com sucesso.
+- Certifique-se de manter sua chave segura e não compartilhá-la publicamente.

@@ -14,7 +14,7 @@
         "tab": "Guides",
         "groups": [
           {
-            "group": "Getting started",
+            "group": "Comece aqui",
             "pages": [
               "index",
               "quickstart",
@@ -48,7 +48,7 @@
         ]
       },
       {
-        "tab": "API reference",
+        "tab": "API Reference",
         "groups": [
           {
             "group": "Informações",
@@ -58,7 +58,7 @@
             ]
           },
           {
-            "group": "API reference",
+            "group": "API Reference",
             "openapi": "https://staging-usuario-api.autorize.com.br/swagger/v1/swagger.json"
           }
         ]
@@ -67,14 +67,19 @@
     "global": {
       "anchors": [
         {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
+          "anchor": "autorize.com.br",
+          "href": "https://autorize.com.br/",
+          "icon": "globe"
         },
         {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
+          "anchor": "Plataforma Titular",
+          "href": "https://staging-titular.autorize.com.br/",
+          "icon": "user"
+        },
+        {
+          "anchor": "Plataforma Usuário",
+          "href": "https://staging-usuario.autorize.com.br/",
+          "icon": "building"
         }
       ]
     }
@@ -86,14 +91,14 @@
   "navbar": {
     "links": [
       {
-        "label": "Support",
+        "label": "Entre em contato",
         "href": "mailto:hi@mintlify.com"
       }
     ],
     "primary": {
       "type": "button",
       "label": "Dashboard",
-      "href": "https://dashboard.mintlify.com"
+      "href": "https://staging-usuario.autorize.com.br/"
     }
   },
   "contextual": {
@@ -110,9 +115,7 @@
   },
   "footer": {
     "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
+      "instagram": "https://www.instagram.com/autorizegcc/"
     }
   }
 }
