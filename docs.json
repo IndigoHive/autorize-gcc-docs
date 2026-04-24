@@ -17,7 +17,7 @@
             "group": "Comece aqui",
             "pages": [
               "index",
-              "essentials/vincular-gcc"
+              "vincular-gcc"
             ]
           }
         ]
@@ -34,7 +34,7 @@
           },
           {
             "group": "API Reference",
-            "openapi": "https://staging-usuario-api.autorize.com.br/swagger/v1/swagger.json"
+            "openapi": "https://usuario-api.autorize.com.br/swagger/v1/swagger.json"
           }
         ]
       }
