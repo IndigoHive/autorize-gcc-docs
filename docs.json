@@ -48,12 +48,12 @@
         },
         {
           "anchor": "Plataforma Titular",
-          "href": "https://staging-titular.autorize.com.br/",
+          "href": "https://titular.autorize.com.br/",
           "icon": "user"
         },
         {
           "anchor": "Plataforma Usuário",
-          "href": "https://staging-usuario.autorize.com.br/",
+          "href": "https://usuario.autorize.com.br/",
           "icon": "building"
         }
       ]
@@ -73,7 +73,7 @@
     "primary": {
       "type": "button",
       "label": "Dashboard",
-      "href": "https://staging-usuario.autorize.com.br/"
+      "href": "https://usuario.autorize.com.br/"
     }
   },
   "contextual": {
