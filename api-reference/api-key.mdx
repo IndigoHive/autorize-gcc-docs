@@ -1,25 +1,25 @@
 ---
-title: 'API Key'
-description: 'Informações sobre como criar e utilizar a API Key no Autorize'
+title: 'Chave de API'
+description: 'Informações sobre como criar e utilizar a Chave de API no Autorize'
 ---
 
 <Note>
-A API Key deve ser criada na plataforma de Usuário (Empresa) no Autorize. É possível indicar um nome para identificar a chave, facilitando sua gestão.
+A Chave de API deve ser criada na plataforma de Usuário (Empresa) no Autorize. É possível indicar um nome para identificar a chave, facilitando sua gestão.
 </Note>
 
-## 1. Criando a API Key
-Acesse a página de [Chaves de API](https://usuario.autorize.com.br/chaves-de-api) e clique no botão "Criar API Key".
+## 1. Criando a Chave de API
+Acesse a página de [Chaves de API](https://usuario.autorize.com.br/chaves-de-api) e clique no botão "Criar Chave de API".
 <Frame>
   <img src="/images/exemplo-botao-criar-chave-api.png" alt="Botão para criar uma nova chave de API na plataforma Autorize" style={{ borderRadius: '0.5rem' }} />
 </Frame>
 
-## 2. Nomeando a API Key
+## 2. Nomeando a Chave de API
 Adicione um nome para a chave, que servirá como identificador para facilitar a gestão das chaves criadas. Em seguida, clique em "Criar".
 <Frame>
   <img src="/images/exemplo-nomear-chave-api.png" alt="Campo para nomear a chave de API na plataforma Autorize" style={{ borderRadius: '0.5rem' }} />
 </Frame>
 
-## 3. Visualizando a API Key
+## 3. Visualizando a Chave de API
 Após criar a chave, ela será exibida na lista de chaves de API. Copie o valor da chave para utilizá-la nas requisições à API.
 Por questões de segurança, o valor da chave só será exibido uma vez. Certifique-se de copiá-lo e armazená-lo em um local seguro.
 <Frame>
@@ -28,7 +28,7 @@ Por questões de segurança, o valor da chave só será exibido uma vez. Certifi
 
 ### Utilização
 
-A **API Key** é necessária para autenticar todas as requisições enviadas para a API. Ela deve ser incluída no cabeçalho `Api-Key` de cada requisição.
+A **Chave de API** é necessária para autenticar todas as requisições enviadas para a API. Ela deve ser incluída no cabeçalho `Api-Key` de cada requisição.
 
 ```http
 GET /api/endpoint HTTP/1.1
@@ -38,5 +38,5 @@ Api-Key: sua-chave-aqui
 
 ### Importante
 
-- Requisições com **API Keys inválidas** não serão concluídas com sucesso.
+- Requisições com **Chaves de API inválidas** não serão concluídas com sucesso.
 - Certifique-se de manter sua chave segura e não compartilhá-la publicamente.

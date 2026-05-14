@@ -11,7 +11,7 @@
   "navigation": {
     "tabs": [
       {
-        "tab": "Guides",
+        "tab": "Inicio",
         "groups": [
           {
             "group": "Comece aqui",
@@ -23,7 +23,7 @@
         ]
       },
       {
-        "tab": "API Reference",
+        "tab": "Referência",
         "groups": [
           {
             "group": "Informações",
@@ -33,7 +33,7 @@
             ]
           },
           {
-            "group": "API Reference",
+            "group": "Endpoints",
             "openapi": "https://usuario-api.autorize.com.br/swagger/v1/swagger.json"
           }
         ]
