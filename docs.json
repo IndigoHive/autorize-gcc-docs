@@ -3,7 +3,7 @@
   "theme": "mint",
   "name": "Autorize Docs",
   "colors": {
-    "primary": "#78C2EA",
+    "primary": "#0056DB",
     "light": "#0056DB",
     "dark": "#17438F"
   },
@@ -73,14 +73,14 @@
           "icon": "globe"
         },
         {
-          "anchor": "Plataforma Titular",
-          "href": "https://titular.autorize.com.br/",
-          "icon": "user"
-        },
-        {
-          "anchor": "Plataforma Usuário",
+          "anchor": "Área do Usuário",
           "href": "https://usuario.autorize.com.br/",
           "icon": "building"
+        },
+        {
+          "anchor": "Acesso do Titular",
+          "href": "https://titular.autorize.com.br/",
+          "icon": "user"
         }
       ]
     }
