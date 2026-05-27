@@ -1,0 +1,116 @@
+---
+title: 'Fluxo da informação'
+description: 'Entenda como os dados fluem entre os diferentes componentes do sistema.'
+---
+
+## Casos de uso com consentimento do titular
+Fluxo para casos de uso que dependem do consentimento do titular, conforme estabelecido pela Portaria SENATRAN nº 139, que exige o consentimento prévio do titular para o acesso aos dados pessoais. Este fluxo garante que o titular tenha controle sobre seus dados e esteja ciente de como eles serão utilizados.
+
+<Steps>
+  <Step title="Usuário solicita consentimento ao titular">
+    <Card>
+      ```mermaid
+      sequenceDiagram
+          actor Usuario
+          participant GCC as Autorize (GCC)
+          participant PGCC as PGCC
+
+          Usuario->>GCC: Solicita consentimento de acesso aos dados<br>a partir do CPF do titular
+          GCC->>PGCC: Registra solicitação de consentimento
+          PGCC->>GCC: Solicitação registrada com sucesso
+          GCC->>Usuario: Solicitação registrada com sucesso
+      ```
+    </Card>
+  </Step>
+  <Step title="Titular recebe solicitação e responde">
+    <Card>
+      ```mermaid
+      sequenceDiagram
+          actor Titular
+          participant GCC as Autorize (GCC)
+          participant PGCC as PGCC
+
+          Titular ->> GCC: Acessa plataforma via gov.br <br> e visualiza solicitação de consentimento
+          Titular ->> GCC: Responde à solicitação de consentimento
+          alt Consentimento concedido
+              GCC ->> PGCC: Registra consentimento concedido
+              PGCC ->> GCC: Consentimento registrado com sucesso
+              GCC ->> Titular: Confirmação de consentimento concedido
+          end
+      ```
+    </Card>
+  </Step>
+  <Step title="Usuário recebe webhook com hash de consulta">
+    <Card>
+      ```mermaid
+      sequenceDiagram
+          participant PGCC as PGCC
+          participant GCC as Autorize (GCC)
+          actor Usuario
+
+          PGCC->>GCC: Notifica resultado da solicitação de consentimento
+          GCC->>GCC: Gera hash de consulta assinada
+          GCC->>Usuario: Envia webhook <br>com hash de consulta gerada
+      ```
+    </Card>
+  </Step>
+  <Step title="Usuário utiliza hash para realizar consultas">
+    <Card>
+      ```mermaid
+      sequenceDiagram
+          actor Usuario
+          participant PGCC as PGCC
+          participant SENATRAN as SENATRAN
+
+          Usuario->>PGCC: Realiza consulta utilizando hash de consulta
+          PGCC->>SENATRAN: Consulta dados
+          SENATRAN->>PGCC: Retorna dados consultados
+          PGCC ->> PGCC: Registra o tratamento dos <br>dados para o titular no PDC
+          PGCC->>Usuario: Envia dados consultados
+      ```
+      Utiliza o hash de consulta para realizar consultas de dados de veículos, infrações e condutores diretamente das bases da Senatran.
+
+      Após a consulta, a PGCC registra o tratamento dos dados para o titular no PDC, garantindo transparência e conformidade com a LGPD, mesmo nos casos onde o consentimento prévio não é exigido.
+    </Card>
+  </Step>
+</Steps>
+
+## Casos de uso sem consentimento do titular
+Fluxo para casos de uso que não dependem do consentimento do titular, conforme estabelecido pela Portaria SENATRAN nº 139, que prevê hipóteses de tratamento de dados pessoais sem a necessidade de consentimento prévio do titular. Este fluxo é aplicável em situações onde a lei permite o acesso aos dados sem o consentimento do titular, garantindo que os usuários possam realizar consultas diretamente, utilizando um hash de consulta gerado pela GCC.
+
+<Steps>
+  <Step title="Usuário solicita hash de consulta para GCC">
+    <Card>
+      ```mermaid
+      sequenceDiagram
+          actor Usuario
+          participant GCC as Autorize (GCC)
+          participant PGCC as PGCC
+
+          Usuario->>GCC: Solicita hash de consulta
+          GCC->>PGCC: Encaminha hash assinada para validação
+          PGCC->>GCC: Retorna validação da hash
+          GCC->>Usuario: Envia hash de consulta
+      ```
+    </Card>
+  </Step>
+  <Step title="Usuário utiliza hash para realizar consultas">
+    <Card>
+      ```mermaid
+      sequenceDiagram
+          actor Usuario
+          participant PGCC as PGCC
+          participant SENATRAN as SENATRAN
+
+          Usuario->>PGCC: Realiza consulta utilizando hash de consulta
+          PGCC->>SENATRAN: Consulta dados
+          SENATRAN->>PGCC: Retorna dados consultados
+          PGCC ->> PGCC: Registra o tratamento dos <br>dados para o titular no PDC
+          PGCC->>Usuario: Envia dados consultados
+      ```
+      Utiliza o hash de consulta para realizar consultas de dados de veículos, infrações e condutores diretamente das bases da Senatran.
+
+      Após a consulta, a PGCC registra o tratamento dos dados para o titular no PDC, garantindo transparência e conformidade com a LGPD, mesmo nos casos onde o consentimento prévio não é exigido.
+    </Card>
+  </Step>
+</Steps>

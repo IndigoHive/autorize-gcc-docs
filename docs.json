@@ -12,23 +12,48 @@
     "tabs": [
       {
         "tab": "Inicio",
+        "icon": "home",
         "groups": [
           {
             "group": "Comece aqui",
             "pages": [
-              "index",
-              "guides/vincular-gcc"
+              "index"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Guias",
+        "icon": "book",
+        "groups": [
+          {
+            "group": "Visão geral",
+            "pages": [
+              "guias/fluxo-da-informacao",
+              "guias/vincular-gcc"
+            ]
+          },
+          {
+            "group": "Integração",
+            "pages": [
+              "guias/chaves-de-api"
+            ]
+          },
+          {
+            "group": "Ajuda",
+            "pages": [
+              "guias/glossário"
             ]
           }
         ]
       },
       {
         "tab": "Referência",
+        "icon": "code",
         "groups": [
           {
             "group": "Informações",
             "pages": [
-              "api-reference/api-key",
               "api-reference/swagger"
             ]
           },

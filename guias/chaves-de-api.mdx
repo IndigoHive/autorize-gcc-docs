@@ -1,0 +1,53 @@
+---
+title: 'Chave de API'
+description: 'Informações sobre como criar e utilizar a Chave de API no Autorize'
+---
+
+<Note>
+A Chave de API é a credencial obrigatória para autenticação nas requisições da API de Usuário do Autorize. Todas as solicitações devem incluir a chave no cabeçalho `Api-Key` para serem processadas com sucesso.
+</Note>
+
+## Boas práticas de segurança
+
+<Card>
+  - Certifique-se de manter sua chave segura e não compartilhá-la publicamente.
+  - Nunca exponha sua chave em repositórios de código, arquivos de configuração versionados ou logs.
+  - Regenere ou revogue chaves que possam ter sido comprometidas imediatamente.
+  - Utilize variáveis de ambiente ou gerenciadores de secrets para armazenar suas chaves.
+  - Monitore o uso de suas chaves de API e revise os acessos regularmente.
+</Card>
+
+## Como criar uma chave de API
+<Steps>
+  <Step title="Acesse a página de Chaves de API">
+    Acesse a página de [Chaves de API](https://usuario.autorize.com.br/chaves-de-api) na plataforma de Usuário (Empresa) do Autorize.
+  </Step>
+  <Step title="Clique em Criar Chave de API">
+    Clique no botão "Criar Chave de API" para iniciar o processo de criação.
+    <Frame>
+      <img src="/images/exemplo-botao-criar-chave-api.png" alt="Botão para criar uma nova chave de API na plataforma Autorize" style={{ borderRadius: '0.5rem' }} />
+    </Frame>
+  </Step>
+  <Step title="Nomeie a Chave de API">
+    Adicione um nome para a chave, que servirá como identificador para facilitar a gestão das chaves criadas. Em seguida, clique em "Criar".
+    <Frame>
+      <img src="/images/exemplo-nomear-chave-api.png" alt="Campo para nomear a chave de API na plataforma Autorize" style={{ borderRadius: '0.5rem' }} />
+    </Frame>
+  </Step>
+  <Step title="Copie o valor da Chave de API">
+    Após criar a chave, ela será exibida na lista de chaves de API. Copie o valor da chave para utilizá-la nas requisições à API. **Por questões de segurança, o valor da chave só será exibido uma vez**. Certifique-se de copiá-lo e armazená-lo em um local seguro.
+    <Frame>
+      <img src="/images/exemplo-api-key.png" alt="Exemplo de uma chave de API gerada na plataforma Autorize" style={{ borderRadius: '0.5rem' }} />
+    </Frame>
+  </Step>
+</Steps>
+
+## Utilização
+
+Inclua sua Chave de API no header `Api-Key` de cada requisição para autenticar junto à API do Autorize. O header é obrigatório para o processamento bem-sucedido de todas as solicitações.
+
+```http
+GET https://usuario-api.autorize.com.br/api/solicitacao-consentimento/criar/pendente HTTP/1.1
+Host: api.autorize.com.br
+Api-Key: sua-chave-aqui
+```
