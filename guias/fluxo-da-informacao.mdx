@@ -15,7 +15,7 @@ Fluxo para casos de uso que dependem do consentimento do titular, conforme estab
           participant GCC as Autorize (GCC)
           participant PGCC as PGCC
 
-          Usuario->>GCC: Solicita consentimento de acesso aos dados<br>a partir do CPF do titular
+          Usuario->>GCC: Solicita consentimento de acesso aos dados<br>a partir do CPF do titular<br>HTTP POST /api/solicitacao-consentimento/criar/pendente
           GCC->>PGCC: Registra solicitação de consentimento
           PGCC->>GCC: Solicitação registrada com sucesso
           GCC->>Usuario: Solicitação registrada com sucesso
@@ -50,6 +50,8 @@ Fluxo para casos de uso que dependem do consentimento do titular, conforme estab
 
           PGCC->>GCC: Notifica resultado da solicitação de consentimento
           GCC->>GCC: Gera hash de consulta assinada
+          GCC->>PGCC: Encaminha hash assinada para validação
+          PGCC->>GCC: Retorna validação da hash
           GCC->>Usuario: Envia webhook <br>com hash de consulta gerada
       ```
     </Card>
@@ -71,6 +73,9 @@ Fluxo para casos de uso que dependem do consentimento do titular, conforme estab
       Utiliza o hash de consulta para realizar consultas de dados de veículos, infrações e condutores diretamente das bases da Senatran.
 
       Após a consulta, a PGCC registra o tratamento dos dados para o titular no PDC, garantindo transparência e conformidade com a LGPD, mesmo nos casos onde o consentimento prévio não é exigido.
+
+      Documentação da API PGCC disponível para usuários:
+      https://hom-pgcc.np.bsa.estaleiro.serpro.gov.br/manual/servicos_usuarios/swagger_pgcc_consultas_api/
     </Card>
   </Step>
 </Steps>
@@ -87,7 +92,8 @@ Fluxo para casos de uso que não dependem do consentimento do titular, conforme 
           participant GCC as Autorize (GCC)
           participant PGCC as PGCC
 
-          Usuario->>GCC: Solicita hash de consulta
+          Usuario->>GCC: Solicita hash de consulta<br>HTTP POST /api/hash-consulta
+          GCC->>GCC: Gera hash de consulta assinada
           GCC->>PGCC: Encaminha hash assinada para validação
           PGCC->>GCC: Retorna validação da hash
           GCC->>Usuario: Envia hash de consulta
@@ -111,6 +117,9 @@ Fluxo para casos de uso que não dependem do consentimento do titular, conforme 
       Utiliza o hash de consulta para realizar consultas de dados de veículos, infrações e condutores diretamente das bases da Senatran.
 
       Após a consulta, a PGCC registra o tratamento dos dados para o titular no PDC, garantindo transparência e conformidade com a LGPD, mesmo nos casos onde o consentimento prévio não é exigido.
+
+      Documentação da API PGCC disponível para usuários:
+      https://hom-pgcc.np.bsa.estaleiro.serpro.gov.br/manual/servicos_usuarios/swagger_pgcc_consultas_api/
     </Card>
   </Step>
 </Steps>

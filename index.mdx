@@ -1,30 +1,95 @@
 ---
-title: "Introdução"
-description: "Gestão e Consentimento e Ciência de dados"
+title: "Bem-vindo à Autorize"
+description: "Documentação oficial da plataforma GCC — Gerenciamento de Consentimento e Ciência de Dados"
+mode: "custom"
 ---
 
-As Gerenciadoras de Consentimento e Ciência (GCC) são entidades fundamentais no novo modelo de tratamento de dados da Secretaria Nacional de Trânsito (SENATRAN). Abaixo, detalho o que são, seus objetivos e funcionamento, com base nos documentos do processo de credenciamento.
+<div className="text-center px-8 pt-20 pb-12">
+  <h1 className="text-5xl font-extrabold mb-5 leading-tight text-gray-900 dark:text-white">
+    Bem-vindo à <span className="text-[#17438F]">Autorize</span>
+  </h1>
+  <p className="text-lg max-w-2xl mx-auto mb-10 leading-relaxed text-gray-600 dark:text-gray-300">
+    Plataforma de Gerenciamento de Consentimento e Ciência de Dados.
+  </p>
+  <div className="flex gap-4 justify-center flex-wrap">
+    <a href="/guias/fluxo-da-informacao" className="bg-[#17438F] text-white px-7 py-3 rounded-lg no-underline text-base font-semibold">
+      Começar agora →
+    </a>
+    <a href="/api-reference/index" className="bg-transparent text-[#17438F] px-7 py-3 rounded-lg border-2 border-[#17438F] no-underline text-base font-semibold">
+      Referência da API
+    </a>
+  </div>
+</div>
 
-## O que são as GCC?
-As GCCs são pessoas jurídicas de direito público ou privado credenciadas pelo Ministério dos Transportes para atuar como operadoras responsáveis pela gestão do consentimento e pela ciência do uso de dados
-. Elas funcionam como intermediárias técnicas que garantem que o titular dos dados (o cidadão) tenha controle e conhecimento sobre como suas informações nos sistemas da SENATRAN estão sendo acessadas por terceiros
-.
+---
 
-## Objetivo das GCCs
-O objetivo principal é a prestação de serviços relacionados ao gerenciamento de consentimento e ciência dos titulares no âmbito do tratamento de dados dos sistemas e subsistemas informatizados da SENATRAN. Elas devem assegurar que:
-- O consentimento seja coletado de forma adequada quando exigido por lei.
-- O titular receba ciência clara sobre todas as hipóteses de tratamento de seus dados.
-- Haja conformidade estrita com a Lei Geral de Proteção de Dados (LGPD).
+<div className="max-w-5xl mx-auto px-8 pb-12">
 
-## Requisitos e Responsabilidades
-Para atuarem, as GCCs devem cumprir exigências rigorosas de qualificação e segurança, visto que lidam com alto volume de dados sensíveis:
-- Segurança da Informação: Devem possuir certificações como ISO/IEC 27001 (Segurança da Informação) e ISO/IEC 27701 (Privacidade)
-- Capacidade Técnica: Precisam oferecer soluções escaláveis via APIs, possuir planos de recuperação de desastres (disaster recovery) e capacidade de auto scaling.
-- DPO: Cada empresa deve indicar um Encarregado pelo Tratamento de Dados Pessoais (DPO) qualificado.
+<h2 className="text-3xl font-bold mb-3 mt-10 text-gray-900 dark:text-white">
+  Gestora de Consentimento e Ciência
+</h2>
 
-## Edital de Credenciamento
+<p className="mb-6 text-gray-700 dark:text-gray-300 leading-relaxed">
+  As Gerenciadoras de Consentimento e Ciência (GCC) são entidades fundamentais no novo modelo de tratamento de dados da Secretaria Nacional de Trânsito (SENATRAN). Abaixo, detalho o que são, seus objetivos e funcionamento, com base nos documentos do processo de credenciamento.
+</p>
 
-Para mais informações sobre o processo de credenciamento, consulte o edital oficial disponível no link abaixo:
+<p className="mb-6 text-gray-700 dark:text-gray-300 leading-relaxed">
+  As GCCs são pessoas jurídicas de direito público ou privado credenciadas pelo Ministério dos Transportes para atuar como operadoras responsáveis pela gestão do consentimento e pela ciência do uso de dados. Elas funcionam como intermediárias técnicas que garantem que o titular dos dados (o cidadão) tenha controle e conhecimento sobre como suas informações nos sistemas da SENATRAN estão sendo acessadas por terceiros.
+</p>
+
+<h2 className="text-3xl font-bold mb-3 mt-10 text-gray-900 dark:text-white">
+  Objetivo das GCCs
+</h2>
+
+<p className="mb-6 text-gray-700 dark:text-gray-300 leading-relaxed">
+  O objetivo principal é a prestação de serviços relacionados ao gerenciamento de consentimento e ciência dos titulares no âmbito do tratamento de dados dos sistemas e subsistemas informatizados da SENATRAN. Elas devem assegurar que:
+</p>
+
+<Card>
+  - Garante que o cidadão autorize o acesso aos seus dados de forma explícita e rastreável.
+  - O titular receba ciência clara sobre todas as hipóteses de tratamento de seus dados.
+  - Haja conformidade estrita com a Lei Geral de Proteção de Dados (LGPD).
+</Card>
+
+<h2 className="text-3xl font-bold mb-5 mt-10 text-gray-900 dark:text-white">
+  Comece por aqui
+</h2>
+
+<CardGroup cols={2}>
+  <Card title="Fluxo da Informação" icon="diagram-project" href="/guias/fluxo-da-informacao">
+    Entenda como os dados trafegam entre titulares, usuários e a SENATRAN.
+  </Card>
+  <Card title="Vincular GCC" icon="link" href="/guias/vincular-gcc">
+    Aprenda como vincular sua organização com a GCC Autorize.
+  </Card>
+  <Card title="Chaves de API" icon="key" href="/guias/chaves-de-api">
+    Configure Chaves de API para consumir a API da Autorize.
+  </Card>
+  <Card title="Glossário" icon="book-open" href="/guias/glossário">
+    Termos e conceitos essenciais do ecossistema GCC e da SENATRAN.
+  </Card>
+</CardGroup>
+
+<h2 className="text-3xl font-bold mb-5 mt-10 text-gray-900 dark:text-white">
+  Referência da API
+</h2>
+
+<CardGroup cols={2}>
+  <Card title="Visão Geral" icon="circle-info" href="/api-reference">
+    Informações gerais sobre autenticação, estrutura das requisições e respostas.
+  </Card>
+  <Card title="Swagger / OpenAPI" icon="code" href="/api-reference/swagger">
+    Explore e teste todos os endpoints disponíveis na interface interativa.
+  </Card>
+</CardGroup>
+
+<h2 className="text-3xl font-bold mb-3 mt-10 text-gray-900 dark:text-white">
+  Edital de Credenciamento
+</h2>
+
+<p className="mb-6 text-gray-700 dark:text-gray-300 leading-relaxed">
+  Para mais informações sobre o processo de credenciamento, consulte o edital oficial disponível no link abaixo:
+</p>
 
 <Card
   title="Edital de Credenciamento"
@@ -33,3 +98,5 @@ Para mais informações sobre o processo de credenciamento, consulte o edital of
 >
   Acesse o edital oficial para detalhes sobre requisitos e procedimentos.
 </Card>
+
+</div>
