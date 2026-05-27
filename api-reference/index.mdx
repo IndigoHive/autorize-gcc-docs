@@ -1,0 +1,36 @@
+---
+title: 'Introdução'
+description: 'Documentação da API disponível para Usuários vinculados ao Autorize (GCC).'
+---
+
+## Base URL
+
+A base URL para acessar a API do Autorize (GCC) é:
+
+```
+https://usuario-api.autorize.com.br/api
+```
+
+## Autenticação
+A autenticação é realizada utilizando uma chave de API (API Key) que deve ser incluída no cabeçalho de cada requisição. O formato do cabeçalho é o seguinte:
+
+```HTTP
+Api-Key: SUA_CHAVE_DE_API
+```
+<Card title="Guia de Chave de API" icon="key" href="/guias/chaves-de-api">
+  Acesse o guia de Chave de API para obter instruções detalhadas sobre como gerar e utilizar sua chave de API para autenticação.
+</Card>
+
+## Formato da resposta
+As respostas da API são retornadas no formato JSON. Cada resposta conterá um objeto com os seguintes campos:
+
+```json
+{
+  "success": true,
+  "data": {
+    // Dados da resposta
+  },
+  "isPgccErro": false,
+  "mensagem": null
+}
+```

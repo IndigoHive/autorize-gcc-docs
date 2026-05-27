@@ -54,6 +54,7 @@
           {
             "group": "Informações",
             "pages": [
+              "api-reference/index",
               "api-reference/swagger"
             ]
           },
