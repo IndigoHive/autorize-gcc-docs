@@ -7,8 +7,16 @@ description: 'Documentação da API disponível para Usuários vinculados ao Aut
 
 A base URL para acessar a API do Autorize (GCC) é:
 
+### Produção
+
 ```
 https://usuario-api.autorize.com.br/api
+```
+
+### Homologação
+
+```
+https://staging-usuario-api.autorize.com.br/api
 ```
 
 ## Autenticação
@@ -17,6 +25,11 @@ A autenticação é realizada utilizando uma chave de API (API Key) que deve ser
 ```HTTP
 Api-Key: SUA_CHAVE_DE_API
 ```
+
+<Note type="warning">
+  **Chaves de API são separadas por ambiente.** Uma chave de API criada em **Produção** não funcionará em **Homologação**, e vice-versa. Certifique-se de usar a chave correta para o ambiente ao qual você está se conectando.
+</Note>
+
 <Card title="Guia de Chave de API" icon="key" href="/guias/chaves-de-api">
   Acesse o guia de Chave de API para obter instruções detalhadas sobre como gerar e utilizar sua chave de API para autenticação.
 </Card>
