@@ -60,7 +60,7 @@
           },
           {
             "group": "Endpoints",
-            "openapi": "https://usuario-api.autorize.com.br/swagger/v1/swagger.json"
+            "openapi": "https://public-usuario-api.autorize.com.br/swagger/v1/swagger.json"
           }
         ]
       }
