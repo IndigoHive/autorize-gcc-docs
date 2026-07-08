@@ -92,8 +92,12 @@
   "navbar": {
     "links": [
       {
+        "label": "Solicitar suporte",
+        "href": "https://indigohive.atlassian.net/servicedesk/customer/portal/202"
+      },
+      {
         "label": "Entre em contato",
-        "href": "mailto:hi@mintlify.com"
+        "href": "https://wa.me/5511936232961"
       }
     ],
     "primary": {
@@ -113,6 +117,10 @@
      "cursor",
      "vscode"
    ]
+  },
+  "description": "Documentação Autorize Indigo Hive. Referência de API, guias de integração e informações sobre o fluxo da informação.",
+  "search": {
+    "prompt": "Procurar..."
   },
   "footer": {
     "socials": {
