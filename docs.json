@@ -29,8 +29,8 @@
           {
             "group": "Visão geral",
             "pages": [
-              "guias/fluxo-da-informacao",
-              "guias/vincular-gcc"
+              "guias/vincular-gcc",
+              "guias/fluxo-da-informacao"
             ]
           },
           {
