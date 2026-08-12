@@ -36,7 +36,8 @@
           {
             "group": "Integração",
             "pages": [
-              "guias/chaves-de-api"
+              "guias/chaves-de-api",
+              "guias/webhooks"
             ]
           },
           {

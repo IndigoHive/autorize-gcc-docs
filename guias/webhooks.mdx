@@ -1,0 +1,102 @@
+---
+title: 'Webhooks'
+description: 'Informações sobre como criar e utilizar Webhooks no Autorize'
+---
+
+Receba notificações automáticas do Autorize sempre que algo importante acontecer.
+
+## Como funciona
+1. Você cria um endpoint no seu sistema <br /> Ex.: https://meusite.com/webhooks/autorize
+2. Você cadastra esse endpoint no dashboard do Autorize e configura quais eventos deseja receber.
+3. Sempre que um evento ocorre, o Autorize:
+   - Envia um POST para a sua URL
+   - O POST contém o evento (ex Hash.Criado)
+   - Seu sistema processa esse evento
+
+---
+
+## Segurança
+
+Os webhooks precisam ser seguros — qualquer pessoa pode tentar enviar requisições falsas para sua aplicação.
+
+Por isso, recomendamos as seguintes medidas de proteção:
+
+1. **Secret na URL**
+   Cada webhook possui uma chave secreta incluída na URL. Antes de processar o evento, seu sistema deve validar essa chave e confirmar que ela corresponde ao webhook cadastrado.
+
+2. **Header com secret**
+   O Autorize inclui uma assinatura no cabeçalho de cada evento enviado. Essa assinatura é gerada no momento de criação do webhook. Seu sistema deve validar essa assinatura antes de processar o evento.
+
+> Importante: nunca confie apenas no IP da origem ou na URL pública. Sempre valide a assinatura do webhook antes de processar a mensagem.
+
+---
+
+## Como criar um webhook no Autorize
+<Steps>
+  <Step title="Acesse a página de Webhooks">
+    Acesse a página de [Webhooks](https://usuario.autorize.com.br/webhooks) na plataforma de Usuário (Empresa) do Autorize.
+  </Step>
+  <Step title="Clique em Adicionar URL">
+    Clique no botão "Adicionar URL" para iniciar o processo de criação.
+    <Frame>
+      <img src="/images/exemplo-botao-adicionar-url-webhooks.png" alt="Botão para criar uma Webhooks na plataforma Autorize" style={{ borderRadius: '0.5rem' }} />
+    </Frame>
+  </Step>
+  <Step title="Configure as informações do Webhook">
+    Adicione uma URL, e os eventos que deseja receber e clique em "Criar".
+    <Frame>
+      <img src="/images/exemplo-url-e-eventos-webhooks.png" alt="Exemplo de configuração de URL e eventos para um Webhook" style={{ borderRadius: '0.5rem' }} />
+    </Frame>
+  </Step>
+  <Step title="Guarde o secret do Webhook">
+    Após criar o webhook, será exibido um secret. Copie o valor do secret para utilizá-lo na validação das requisições recebidas. **Por questões de segurança, o valor do secret só será exibido uma vez**. Certifique-se de copiá-lo e armazená-lo em um local seguro.
+    <Frame>
+      <img src="/images/exemplo-pos-criacao-webhooks.png" alt="Exemplo de secret exibido após a criação de um Webhook" style={{ borderRadius: '0.5rem' }} />
+    </Frame>
+  </Step>
+</Steps>
+
+---
+
+## Eventos disponíveis
+
+| Eventos | Enviado quando                            |
+| -------- | ------------------------------------- |
+| HashCriado     | Após a criação de um hash para o consentimento aceito pelo titular        |
+
+## Estrutura do evento
+
+```json
+{
+  "id": "6d2e4b2a-d44f-44b7-9f0e-c52c3e90ecde",
+  "timestamp": "2026-08-12T15:46:12.2691978Z",
+  "tipoEvento": "NOME_DO_EVENTO",
+  "data": {
+    ...
+  }
+}
+```
+
+---
+
+## Retentativas
+
+- Se o seu endpoint não responder com status `2xx` dentro do timeout, o Autorize tenta reenviar o evento automaticamente com backoff progressivo.
+- A retentativa pode ocorrer quando:
+  - a conexão excede o timeout;
+  - o endpoint retorna status `5xx`;
+  - o endpoint retorna status `4xx` diferente de `200`.
+- Antes de reenviar, a plataforma aguarda um intervalo crescente para reduzir a carga em seu sistema e aumentar as chances de sucesso.
+
+---
+
+## Boas práticas de segurança
+
+<Card>
+- Use **HTTPS** em todos os endpoints de webhook.
+- Valide o **secret** e a **assinatura do header** antes de processar qualquer evento.
+- Registre cada evento recebido e processe cada mensagem apenas uma vez.
+- Responda com **200 OK** somente depois que o processamento for concluído com sucesso.
+- Implemente retentativas com **idempotência** para evitar duplicações.
+- Evite validar o payload inteiro do webhook com schemas rígidos, para não quebrar o endpoint quando o contrato evoluir.
+</Card>
